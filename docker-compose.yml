@@ -20,6 +20,19 @@ services:
       - POSTGRES_USER=hello_django
       - POSTGRES_PASSWORD=hello_django
       - POSTGRES_DB=hello_django_dev
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    depends_on:
+        - db
+    ports:
+        - "5555:80"
+    environment:
+        PGADMIN_DEFAULT_EMAIL: homescript1@gmail.com
+        PGADMIN_DEFAULT_PASSWORD: timenodey
+    restart: unless-stopped
 
 volumes:
   postgres_data:
