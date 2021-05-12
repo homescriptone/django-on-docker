@@ -140,6 +140,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_URL = "/mediafiles/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
 
+AUTH_USER_MODEL = 'users.UserProfile'
+
 #Integration of sentry as debugger
 sentry_sdk.init(
     dsn="https://127169c073534aeb93be24a6fd46b9bd@o311075.ingest.sentry.io/5757222",
